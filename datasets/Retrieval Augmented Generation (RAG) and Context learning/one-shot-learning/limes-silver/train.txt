@@ -1,3 +1,0 @@
-0	1
-AND(AND(AND(trigrams(x.givenName,y.givenName)|0.0,OR(AND(cosine(x.director,y.director)|0.37,trigrams(x.givenName,y.givenName)|0.37)|0.0,soundex(x.director,y.director)|0.0)|0.37)|0.37,mongeElkan(x.givenName,y.givenName)|0.0)|0.0,trigrams(x.director,y.director)|0.37)	a link will be generated if the givenNames of the source and the target have a Trigrams similarity of 0% and the directors of the source and the target have a Cosine similarity of 37% and the givenNames of the source and the target have a Trigrams similarity of 37% or the directors of the source and the target have a Soundex similarity of 0% and the givenNames of the source and the target have a Mongeelkan similarity of 0% and the directors of the source and the target have a Trigrams similarity of 37%
-
