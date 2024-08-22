@@ -77,7 +77,7 @@ tokenizer.pad_token_id =  tokenizer.eos_token_id
 pipe = pipeline("text-generation", model=model, tokenizer=tokenizer)
 
 # Read CSV files
-test_df = pd.read_csv(f"datasets/few-shot-learning-dataset/limes-silver/test.txt", sep="\t")
+test_df = pd.read_csv(f"../../../datasets/New-Datasets/limes-silver/test.txt", sep="\t")
 # Convert DataFrame to Dataset
 test_dataset = Dataset.from_pandas(test_df)
 test_dataset = test_dataset.map(create_input_prompt)
