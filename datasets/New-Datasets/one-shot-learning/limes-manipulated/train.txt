@@ -1,0 +1,3 @@
+0	1
+ratcliff(x.clarification, y.elucidation)|0.55 AND jaroWinkler(x.filmtitle, y.Movieplot)|0.75 Or levenshtein(x.roadLabel, y.locationAdress)|0.15	The link will be generated when the clarification of the source and the elucidation of the target have a ratcliff similarity of 55% and the filmtitle of the source and the Movieplot of the target have a jaroWinkler similarity of 75% or the roadLabel of the source and the locationAdress of the target have a levenshtein similarity of 15%
+
