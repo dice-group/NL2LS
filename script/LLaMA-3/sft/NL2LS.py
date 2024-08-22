@@ -79,8 +79,8 @@ tokenizer.pad_token_id = tokenizer.eos_token_id
 pipe = pipeline("text-generation", model=model.module if isinstance(model, torch.nn.DataParallel) else model, tokenizer=tokenizer)
 
 # Read CSV files
-train_df = pd.read_csv("datasets/few-shot-learning-dataset/limes-silver/train.txt", sep="\t")
-val_df = pd.read_csv("datasets/few-shot-learning-dataset/limes-silver/dev.txt", sep="\t")
+train_df = pd.read_csv("../../../datasets/New-Datasets/limes-silver/train.txt", sep="\t")
+val_df = pd.read_csv("../../../datasets/New-Datasets/limes-silver/dev.txt", sep="\t")
 
 # Convert DataFrame to Dataset
 train_dataset = Dataset.from_pandas(train_df.head(200))
