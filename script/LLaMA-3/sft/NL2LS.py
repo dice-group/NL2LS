@@ -79,12 +79,12 @@ tokenizer.pad_token_id = tokenizer.eos_token_id
 pipe = pipeline("text-generation", model=model.module if isinstance(model, torch.nn.DataParallel) else model, tokenizer=tokenizer)
 
 # Read CSV files
-train_df = pd.read_csv("../../../datasets/New-Datasets/limes-silver/train.txt", sep="\t")
-val_df = pd.read_csv("../../../datasets/New-Datasets/limes-silver/dev.txt", sep="\t")
+train_df = pd.read_csv("../../../new-datasets/silver-limes-manipulated/train.txt", sep="\t")
+val_df = pd.read_csv("../../../new-datasets/silver-limes-manipulated/validation.txt", sep="\t")
 
 # Convert DataFrame to Dataset
-train_dataset = Dataset.from_pandas(train_df.head(200))
-val_dataset = Dataset.from_pandas(val_df.head(20))
+train_dataset = Dataset.from_pandas(train_df)
+val_dataset = Dataset.from_pandas(val_df)
 
 train_dataset = train_dataset.map(create_input_prompt)
 val_dataset = val_dataset.map(create_input_prompt)
@@ -97,16 +97,21 @@ peft_config = LoraConfig(
     task_type="CAUSAL_LM"
 )
 
+print(train_dataset[0])  # Print the first sample to check the structure
+example_input = train_dataset[0]['messages']
+print(tokenizer(example_input))
+
+
 # Define the data collator
 data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 
 training_args = TrainingArguments(
     output_dir="nl2ls_models",
     num_train_epochs=3,
-    per_device_train_batch_size=2,
+    per_device_train_batch_size=1,
     gradient_accumulation_steps=4,
     optim="paged_adamw_32bit",
-    save_steps=10,
+    save_steps=100,
     learning_rate=2e-4,
     weight_decay=0.001,
     fp16=False,
