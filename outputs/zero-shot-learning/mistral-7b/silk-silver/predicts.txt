@@ -1,0 +1,22 @@
+ `(source_label, target_label, target_name, target_side_effect_name, source_name, source_label).levenstein_distance <= 1`
+ link_specification: "50% Jaro similarity between source and target labels or 50% trigram similarity between source labels and coordinator of target labels"
+ link_specification: label_equal(source, target)
+ Link Specification: HTTP 303 See Other: Location = Target Definition URL
+ link_specification: (source_label_trigram_similarity >= 0.5 OR target_latitude_wgs84_similarity >= 0.5)
+ link: Jaro-Winkler similarity >= 0.95 or creators are equal
+ levenshtein_distance ~ average(name_types) OR wgs84_similarity(coordinates) = max(similarity_scores)
+ link_similarity >= 0.85
+ link: jaro_similarity(source_country_code, target_country_code) >= 0.90
+ wgs84_distance(source_lat, target_lat) <= 1_degrees
+ link: JaroSimilarity(source_label, target_label) >= 1.0
+ link:source-name~target-name[similarity=0.8]
+ link: Jaro-Winkler Similarity(source_name, target_name) >= threshold_value
+ levenshtein_distance(label_source, label_target) + levenshtein_distance(city_source, subdivision_name_target) <= max_distance
+ link_specification: Jaro_similarity >= max(Jaro(source_label, target_label)) OR Jaro_Winkler_similarity >= max(Jaro_Winkler(source_label, target_label))
+ link:similarity(labels, source, target) OR homepage(source) == homepage(target) OR wikipedia(source) == wikipedia(target) OR members(source) == members(target) OR maker(source) == artist(target)
+ `type: link; relation: has_birthplace_or_label_similar_sameAs; source: {subject, label}; target: {target, sameAs}`
+ `Levenshtein Distance(source.label, target.label) == max(Levenshtein Distance(source.DBpedia_label, target.DBpedia_label), Levenshtein Distance(source.FOAF_label, target.FOAF_label), Levenshtein Distance(source.RDFS_label, target.RDFS_label), Levenshtein Distance(
+ link: wgs84_distance(source, target) >= 0.85*average(wgs84_distance(source, all_points), wgs84_distance(target, all_points))
+ levenshtein_distance(source_name, target_name) + levenshtein_distance(source_name, target_label) + levenshtein_distance(target_name, target_label) <= threshold
+ wgs84_distance <= 0.9km OR levenshtein_distance(labels) <= 1 OR (alternate_names(source) AND levenshtein_distance(labels) <= 1) OR (alternate_names(target) AND levenshtein_distance(labels) <= 1)
+ wgs84_similarity(latitude(source), latitude(target)) >= 0.5 or jaccard_similarity(labels(source), labels(target)) >= 0.5

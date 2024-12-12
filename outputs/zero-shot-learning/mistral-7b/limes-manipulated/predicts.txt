@@ -1,0 +1,2 @@
+ workfor_weighted_jaccard_similarity=0.5, teaching_monge_elkan_similarity=0.9, opposing_jaccard_similarity=0.37
+ Link Specification: source_similarity:NYSIIS_55, deliberation_similarity:jaroWinkler_75, location_similarity:levenshtein_15

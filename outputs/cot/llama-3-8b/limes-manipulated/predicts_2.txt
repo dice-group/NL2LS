@@ -1,0 +1,2 @@
+AND(OR(WEIGHTED_JACCARD_SIMILARITY(workfor(source), lecturingfor(target)) >= 50%), AND(MONGE_ELKAN_SIMILARITY(teaching(source), coaching(target)) >= 90%, JACCARD_SIMILARITY(opposing(source), defending(target)) >= 37%))
+(AND(NYSIIS(source, target), OR(AND(deliberation(source), consideration(target)), AND(roadLabel(source), locationAdress(target)))) | 75%) | 55%

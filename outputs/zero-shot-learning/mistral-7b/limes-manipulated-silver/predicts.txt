@@ -1,0 +1,21 @@
+ lsa:0.82_overlap_givenName,0.25_cosine_similarity_givenName,0.82_overlap_workDescription,0.25_cosine_similarity_workDescription
+ `http://example.com/resource_mismatch_conditions`
+ link: title~82% director~25% x.title~82% x.director~25% title~82% iis(x.title,y.title)~25%
+ `[Jaccard_similarity_resource_title_source_target < 0.25 AND Trigram_similarity_resource_title_source_target < 0.25 AND Koeln_similarity_label_source_target < 1 AND Trigram_similarity_label_source_target < 0.25]`
+ `overlap_similarity >= 0.45 OR trigram_similarity >= 0.55 (movie or name) OR jaccard_similarity >= 0.55 (name or movie)`
+ `45%_Koeln|Exact_Trigrams|45%_Doublemeta|Exact_Trigrams|Exact_Doublemeta|45%_Trigrams|Exact_Nysiis|`
+ `if (Ratcliff(source_comment, target_comment) >= 0.45 || (Koeln(source_workDescription, target_workDescription) >= 0.55 || Cosine(source_workDescription, target_workDescription) >= 0.55) || (Ratcliff(source_comment, target_resource_workDescription) >= 0.45 || Koeln(source_comment, target_resource
+ `if (RefinedSoundex(x.title, y.title)!= RefinedSoundex(y.title) || KoelnSimilarity(x.title, y.author) >= 0.25 || NysiisSimilarity(x.title, y.title)!= NysiisSimilarity(y.title) || KoelnSimilarity(x.title, y.title) >= 0.25 || Ko
+ link: mismatch_55_percent_jaccard_qgrams_mongeelkan_caverphone1
+ `(45% Jarowinkler similarity on comments or exact Trigrams match on authors or 45% Meta similarity on comments or exact Trigrams match on comments or exact Meta similarity on authors)`
+ If (Matchrating_firstName(source, target) >= 82 AND Cosine_similarity_label(source, target) >= 55) OR (Overlap_similarity_label(source, target) >= 82 AND Overlap_similarity_firstName(source, target) >= 82 AND Cosine_similarity_label(source, target) >= 55), then the link is generated.
+ `45%_Mongeelkan_Matchrating_Daitchmokotoff_Jaccard`
+ link: source_id!= target_id
+ `45% Jarowinkler similarity for resource names, exact match for Qgrams similarity for authors, 45% Qgrams similarity for resource names, exact match for Ratcliff similarity for authors, and exact match for Cosine similarity for resource names`
+ link: source_resource_id!= target_resource_id
+ `(source.firstName, target.description) >= 0.82 Mongeelkan AND (source.description, target.description) >= 0.25 Qgrams AND (source.firstName, target.firstName) >= 0.82 Ratcliff OR (source.description, target.firstName) >= 0.25 Ratcliff OR (source.firstName, target.description) >= 0.25 Qgram
+ `(source.title_similarity_with(target.title, Caverphone1, 0.45) or source.streetname_exact_match(target.streetname, "Mongeelkan") or target.resource.streetname_exact_match(source.streetname, "Nysiis") or source.title_similarity_with(target.title, Caverphone1, 0.
+ `(Soundex_similarity < 0 | Levenshtein_similarity_comment == 1 | Cosine_similarity_comment!= 1 | Levenshtein_similarity_director == 1)`
+ `http://example.com/resources?similarity=82,55,82,55,55,55`
+ `(givenName_source, givenName_target) >= 0.82_Ratcliff OR (movie_source, movie_target) >= 0.25_Trigrams OR (givenName_source, movie_target) >= 0.25_Trigrams OR (givenName_source, givenName_target) >= 0.25_Cosine OR (movie_source, given
+ `Levenshtein_similarity(comments, 0.45) AND Jaccard_similarity(comments, 0.55) AND Levenshtein_similarity(authors, 0.45)`

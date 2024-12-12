@@ -1,0 +1,2 @@
+AND(OR(WEIGHTEDJACCARD(WorkFor(source), LecturingFor(target)), 0.5), AND(MONGEELKAN(Teaching(source), Coaching(target)), 0.9), AND(JACCARD(Opposing(source), Defending(target)), 0.37))
+(AND(NYSIIS(source, target), OR(AND(deliberation(source), consideration(target)), AND(roadLabel(source), locationAdress(target)))) | 75%) | 55%

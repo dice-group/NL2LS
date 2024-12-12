@@ -1,0 +1,22 @@
+ "LevenshteinDistance(sourceLabel, targetLabel) | <threshold> AND (LevenshteinDistance(sourceLabel, targetName) OR LevenshteinDistance(sourceName, targetLabel) OR LevenshteinDistance(sourceName, targetName) OR LevenshteinDistance(targetLabel, sourceLabel) OR LevenshteinDistance(targetLabel, sourceName) OR LevenshteinDistance(target
+ "Jaro(source_label, target_label) | 0.5 OR Trigrams(source_label, coordinator_of_target) | 0.5"
+ "LabelEqual(<entity1>, <entity2>) | TRUE"
+ "<HTTP Page Equality>(<source>, <target>) | AND(<HTTP Page>(<source>), <Definition>(<target>))"
+ "Similarity(labels(<entity1>, <entity2>).trigrams, 0.5) OR Similarity(latitudes(<entity1>, <entity2>).WGS84, 0.5)"
+ "JaroWinklerSimilarity(label(source), label(target)) OR Equal(creator(source), creator(target))"
+ "LevenshteinDistance(name(source, target), name(sourceType, targetType)) OR WGS84Similarity(coordinates(source), coordinates(target))"
+ "Similarity(label(source), label(target)) > 0.85"
+ "JaroSimilarity(countryCode(source), countryCode(target)) | 0.90"
+ "distance(latitude(<entity1>), latitude(<entity2>)) | 1 degree" AND "spatialReferenceSystem(latitude(<entity1>), WGS84)" AND "spatialReferenceSystem(latitude(<entity2>), WGS84)"
+ "JaroSimilarity(label(source), label(target)) | 1"
+ "LevenshteinDistance(source, target) <= 1"
+ "JaroSimilarity(sourceName, targetName) | 1"
+ "AND(LevenshteinDistance(Label(source), RedirectedLabel(target)), LevenshteinDistance(City(source), SubdivisionName(target)))"
+ "OR(Jaro(<entity1>, <entity2>), JaroWinkler(<entity1>, <entity2>)) | <threshold>"
+ "OR(AND(AND(LevenshteinSimilarity(sourceLabel, targetLabel), 0.8), AND(sourceHomepage == targetHomepage), AND(WikipediaSimilarity(sourceWikipediaPage, targetWikipediaPage), 0.6), AND(MembersSimilarity(sourceMembers, targetMembers), 0.5), AND(MakerSimilarity(sourceMaker, targetArtist), 0
+ "AND(EQUALITY(subject(source), birthplace(target)), JAROWINKLER(label(source), sameAs(target))) | <threshold>"
+ "LevenshteinDistance(label(source), label(target)) | <threshold> OR GeneNameLevenshteinDistance(source, target) | <threshold>","AND(DBpediaRedirects(source), DBpediaRedirects(target)) AND FOAFRedirects(source), FOAFRedirects(target) AND RDFSRedirects(source), RDFSRedirects(target)", "AND(DBpediaLabels
+ "WGS84Distance(source, target) | 0.85" AND "Average(WGS84Distance(source, target)) > 0.85"
+ "LevenshteinDistance(source, target) OR LevenshteinDistance(source, targetLabel) OR LevenshteinDistance(target, targetLabel)"
+ "AND(OR(WGS84Distance(source, target), OR(LevenshteinDistance(sourceLabel, targetLabel), LevenshteinDistance(sourceAlternateNames, targetLabel), LevenshteinDistance(sourceLabel, targetAlternateNames))), 0.9)"
+ "Similarity(label(<entity1>, label(<entity2>)), 0.5) OR Similarity(WGS84_latitude(<entity1>), WGS84_latitude(<entity2>))"

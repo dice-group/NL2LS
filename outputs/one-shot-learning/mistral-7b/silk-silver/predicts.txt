@@ -1,0 +1,22 @@
+ MAX(Levenshtein(a.rdfs:label, b.rdfs:label), Levenshtein(a.rdfs:label, b.foaf:name), Levenshtein(a.foaf:name, b.rdfs:label), Levenshtein(a.foaf:name, b.foaf:name), Levenshtein(a.rdfs:label, b.sideEffect
+ max(jaro(b.rdfs:label, a.rdfs:label) >= 0.5) OR max(trigrams_similarity(b.rdfs:label, a.dbpedia-owl:coordinator.rdfs:label) >= 0.5)
+ equality(b.skos0:prefLabel, a.rdfs:label|0.0)
+ equivalence(rdf:about(b.rdf:about), rdfs:comment(a.rdf:about) | 0.0)
+ ADD(0.5*trigrams(a.rdfs:label, b.dbpp:name), 0.5*WGS84(a.geo:lat, b.geo:lat))
+ average(jaroWinkler(b.rdfs:label,a.rdfs:label|0.95) || (equals(b.dc:creator, a.dc:creator)))
+ average(max(levenshtein(a.foaf:name, b.geonames:alternateName|0.90), levenshtein(a.foaf:name, b.geonames:name|0.90), levenshtein(a.dbpedia-prop:name, b.geonames:name|0.90), levenshtein(a.dbpedia-prop:name,
+ average(jaccard(b.rdfs:label,a.rdfs:label|0.85))
+ MAX(Jaro(a.lgdp:country_code, b.dbpprop:country_code)) >= 0.90
+ ADD(0, 1*MAX(WGS84(a.wgs84:lat, b.wgs84:lat)))
+ MAX(Jaro(a.rdfs:label, b.rdfs:label))
+ max(levenshtein(b.foaf:name,a.foaf:name|1) <= 1)
+ MAX(Jaro(a.dc:title, a.foaf:name, b.dc:title, b.foaf:name))
+ average(max(levenshtein(b.rdfs:label, concat(a.dbpedia:wikiPageRedirects|" ", a.rdfs:label)), levenshtein(b.rdfs:label, a.foaf:name)), max(levenshtein(b.openei:Property-3ACoordinates|" ", a.geo:city), levenshtein(b.opene
+ average(max(jaro(b.rdfs:label,a.rdfs:label),jaroWinkler(b.rdfs:label,a.rdfs:label)))
+ average(max(levenshtein(b.rdfs:label,a.rdfs:label@en|0.95),levenshtein(b.rdfs:label,a.dbpedia-prop:redirect|0.95),levenshtein(b.rdfs:label,a.dbpedia-prop:name|0.95),levenshtein(b.foaf:name,
+ average(equality(subject(a),birthplace(b)|0.65),jaroWinkler(label(a),sameAs(b)|0.65))
+ max(levenshtein(b.rdfs:label|dbpedia:wikiPageRedirects|foaf:name, a.rdfs:label|dbpedia:wikiPageRedirects|foaf:name|rdfs:label), max(levenshtein(b.drugbank:genericName|dbpedia:wikiPageRedirects|foaf:name, a.drugbank:genericName|dbpedia:wiki
+ avg(wgs84(sqrt((b.geo:lat - a.geo:lat)^2 + (b.geo:long - a.geo:long)^2), 2)^0.5) >= 0.85
+ MIN(Levenshtein(a.foaf:name, b.rdfs:label), Levenshtein(a.foaf:name, b.foaf:name), Levenshtein(a.rdfs:label, b.rdfs:label))
+ avg(max(levenshtein(b.rdfs:label,a.rdfs:label|0.90), levenshtein(b.rdfs:label, a.foaf:name|0.90), levenshtein(b.rdfs:label, a.dbpedia:wikiPageRedirects|0.90)), min(wgs84(b.openei:Property-3
+ ADD(MAX(0.5*Jaro(a.geonames:alternateName, b.rdfs:label), 0.5*Jaro(a.geonames:name, b.rdfs:label)), 0.5*WGS84(a.wgs84:lat, b.wgs84:lat))

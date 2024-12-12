@@ -1,0 +1,2 @@
+weightedjaccard(x.workfor, y.lecturingfor)|0.5 Or mongeElkan(x.teaching, y.coaching)|0.9 And jaccard(x.opposing, y.defending)|0.37
+NYSIIS(x.discussion, y.debating)|0.55 AND jaroWinkler(x.deliberation, y.consideration)|0.75 Or levenshtein(x.roadLabel, y.locationAdress)|0.15

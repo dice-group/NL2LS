@@ -1,0 +1,22 @@
+MAX(LEVENSHTEIN(SOURCE.LABEL, TARGET.LABEL), LEVENSHTEIN(SOURCE.LABEL, TARGET.NAME), LEVENSHTEIN(SOURCE.LABEL, SOURCE.LABEL), LEVENSHTEIN(SOURCE.LABEL, TARGET.SIDE_EFFECT_NAME), LEVENSHTEIN(SOURCE.LABEL, SOURCE.NAME), LEVENSHTEIN(SOURCE.LABEL, SOURCE.LABEL))
+OR(JaroSimilarity(label_source, label_target) | 0.5, TrigramSimilarity(label_source, coordinator_target) | 0.5)
+EQUAL(label(source), label(target)) | 1.0
+EQUAL(HTTPPage(Source), Definition(Target)) | 1.0
+OR(Trigrams_Similarity(label_source, label_target) | 0.5, WGS84_Similarity(latitude_source, latitude_target) | 0.5)
+OR(JaroWinklerSimilarity(label(source), label(target)) | 0.95, Equality(creator(source), creator(target)))
+OR(AVG_MIN_LEVENSHTEIN_DISTANCE(name_source, name_target), MAX_WGS84_SIMILARITY(coordinates_source, coordinates_target))
+similarity(label(source), label(target)) | 0.85
+JARO(countryCode_source, countryCode_target) | 0.90
+WGS84Distance(latitude_source, latitude_target) | 1
+JARO_SIMILARITY(label(source), label(target)) | MAXIMUM
+LEVENSHTEIN_DISTANCE(name_source, name_target) | 1
+Jaro(Name_Source, Name_Target) | MAXIMUM
+OR(levenshteinDistance(label(source), label(target_redirected)) | maximum, levenshteinDistance(city(source), subdivision_name(target)) | maximum)
+OR(Jaro(label_source, label_target) | max, JaroWinkler(label_source, label_target) | max)
+OR(LevenshteinSimilarity(label(source), label(target)), Equal(homepage(source), homepage(target)), Similar(WikipediaPage(source), WikipediaPage(target)), Similar(members(source), currentMembers(target)), Similar(maker(source), artist(target)))
+OR(equality(subject(Source), birthplace(Target)) | high, jaroWinkler(label(Source), sameAs(Target)) | high)
+OR(MaxLevenshteinDistance(AND(Source_Label, Target_Label), AND(AND(DBpedia, FOAF), RDFS)), MaxLevenshteinDistance(AND(Source_GeneName, Target_GeneName), AND(AND(DBpedia, FOAF), RDFS))) | maximum
+AVG_SIMILARITY_WGS84(geographic_coordinates_source, geographic_coordinates_target) | 0.85
+Levenshtein(source.name, target.name) | min OR(Levenshtein(source.name, target.label) | min, Levenshtein(target.name, target.label) | min)
+OR(wgs84_distance(coordinates(source), coordinates(target)) | 0.9, OR(levenshtein_distance(label(source), label(target)), levenshtein_distance(label(source), alternate_names(target))))
+OR(similarity(label(source), label(target)) | 0.5, similarity(latitude(source), latitude(target, WGS84)))

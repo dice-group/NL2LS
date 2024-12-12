@@ -1,0 +1,2 @@
+OR(weightedJaccard(workfor[source], lecturingfor[target]) | 0.5, AND(mongeElkan(teaching[source], coaching[target]) | 0.9, jaccard(opposing[source], defending[target]) | 0.37))
+AND(NYSIIS(discussionOfSource, debatingOfTarget) | 0.55, OR(jaroWinkler(deliberationOfSource, considerationOfTarget) | 0.75, levenshtein(roadLabelOfSource, locationAdressOfTarget) | 0.15))

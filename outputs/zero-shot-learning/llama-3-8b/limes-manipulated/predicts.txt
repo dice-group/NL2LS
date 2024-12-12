@@ -1,0 +1,2 @@
+Link Specification: `link = (source.workforce & target.lecturingforce) / (source.workforce | target.lecturingforce) >= 0.5 || (source.teaching & target.coaching) / (source.teaching | target.coaching) >= 0.9 || (source.opposing & target.defending) / (source.opposing | target.defending) >= 0.37`
+link: `link("source", "target", 0.55, 0.75, 0.15)`
