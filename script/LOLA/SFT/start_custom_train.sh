@@ -49,15 +49,14 @@ $LAUNCHER -m torch.distributed.run --nnodes=1 --nproc_per_node=$GPU_COUNT --mast
     --model_name_or_path $MODEL_HF_ID \
     --do_train \
     --train_data_path $DATA_DIR/train.json \
-    --fp16 True \
     --output_dir trained_model/$RUN_LABEL\
-    --num_train_epochs 3 \
-    --per_device_train_batch_size 6 \
+    --num_train_epochs 2 \
+    --per_device_train_batch_size 2 \
     --save_strategy "steps" \
     --save_steps 100 \
     --save_total_limit 1 \
     --logging_steps 10 \
-    --learning_rate 5e-5 \
+    --learning_rate 5e-4 \
     --weight_decay 0.01 \
     --warmup_ratio 0.03 \
     --run_name $RUN_LABEL \
