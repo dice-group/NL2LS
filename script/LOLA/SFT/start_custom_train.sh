@@ -1,5 +1,17 @@
 #!/bin/bash
 set -eu
+
+# To enable full paramter fine-tuning
+export FULL_SFT=${1:-"false"}
+# DeepSpeed configuration
+export USE_DEEPSPEED==${1:-"true"}
+
+
+# Determine the directory of the current script
+CUR_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Change to current directory
+cd $CUR_SCRIPT_DIR
+
 PEFT_VENV_DIR=./venv-lola-custom-task
 source $PEFT_VENV_DIR/bin/activate
 
@@ -20,11 +32,6 @@ postfix=$(date +"%d%m%y%H%M%S")
 
 LAUNCHER="python"
 prefix=""
-
-# To enable full paramter fine-tuning
-FULL_SFT=false
-# DeepSpeed configuration
-USE_DEEPSPEED=true
 
 EXTRA_PARAMS=()
 
