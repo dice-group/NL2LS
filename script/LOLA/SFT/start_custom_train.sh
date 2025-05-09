@@ -4,7 +4,7 @@ PEFT_VENV_DIR=./venv-lola-custom-task
 source $PEFT_VENV_DIR/bin/activate
 
 ## Specify CUDA device
-export CUDA_VISIBLE_DEVICES="0"
+#export CUDA_VISIBLE_DEVICES="0"
 #export CUDA_VISIBLE_DEVICES="0,1"
 
 # CUDA configuration
@@ -22,7 +22,7 @@ LAUNCHER="python"
 prefix=""
 
 # To enable full paramter fine-tuning
-FULL_SFT=true
+FULL_SFT=false
 # DeepSpeed configuration
 USE_DEEPSPEED=true
 
@@ -41,7 +41,7 @@ fi
 # Model and task configuration
 MODEL_HF_ID=dice-research/lola_v1
 MODEL_NAME="${MODEL_HF_ID##*/}"
-DATA_DIR=data_dir/
+DATA_DIR=data_dir/limes-silver
 RUN_LABEL=${prefix}${MODEL_NAME}-${postfix}
 
 # Training command with extensible parameters
@@ -51,8 +51,8 @@ $LAUNCHER -m torch.distributed.run --nnodes=1 --nproc_per_node=$GPU_COUNT --mast
     --train_data_path $DATA_DIR/train.json \
     --fp16 True \
     --output_dir trained_model/$RUN_LABEL\
-    --num_train_epochs 100 \
-    --per_device_train_batch_size 2 \
+    --num_train_epochs 3 \
+    --per_device_train_batch_size 6 \
     --save_strategy "steps" \
     --save_steps 100 \
     --save_total_limit 1 \
