@@ -1,1 +1,3 @@
 data_dir/
+*.sqsh
+venv-*/
