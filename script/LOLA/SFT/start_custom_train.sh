@@ -4,7 +4,7 @@ set -eu
 # To enable full paramter fine-tuning
 export FULL_SFT=${1:-"false"}
 # DeepSpeed configuration
-export USE_DEEPSPEED==${1:-"true"}
+export USE_DEEPSPEED==${2:-"true"}
 
 
 # Determine the directory of the current script
@@ -41,15 +41,21 @@ if [[ "$FULL_SFT" == true ]]; then
 fi
 
 if [[ "$USE_DEEPSPEED" == true ]]; then
-    prefix="deepspeed-"
+    #prefix="deepspeed-"
     EXTRA_PARAMS+=("--deepspeed" "deepspeed_config.json")
 fi
 
 # Model and task configuration
 MODEL_HF_ID=dice-research/lola_v1
 MODEL_NAME="${MODEL_HF_ID##*/}"
-DATA_DIR=data_dir/limes-silver
-RUN_LABEL=${prefix}${MODEL_NAME}-${postfix}
+
+DATA_ROOT=data_dir
+LANG=de
+DATASET_NAME=limes-silver
+
+DATA_DIR=${DATA_ROOT}/${LANG}/${DATASET_NAME}
+
+RUN_LABEL=${prefix}${MODEL_NAME}-${LANG}-${DATASET_NAME}
 
 # Training command with extensible parameters
 $LAUNCHER -m torch.distributed.run --nnodes=1 --nproc_per_node=$GPU_COUNT --master_port=4550 train_custom_task.py \

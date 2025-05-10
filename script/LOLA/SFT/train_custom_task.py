@@ -183,6 +183,8 @@ def train():
     parser = transformers.HfArgumentParser((ModelArguments, DataArguments, TrainingArguments))
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
     
+    print_rank0(f'Dataset path: {data_args.train_data_path}')
+    
     OUTPUT_DIR=training_args.output_dir
     # Check the required training task
     global source_target_builder
