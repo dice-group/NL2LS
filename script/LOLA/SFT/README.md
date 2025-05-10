@@ -1,4 +1,4 @@
-To install requirements, run the following:
+To install the requirements, run the following:
 ```bash
 bash setup_custom_venv.sh
 ```
@@ -9,12 +9,12 @@ PEFT_VENV_DIR=./venv-lola-custom-task
 source $PEFT_VENV_DIR/bin/activate
 ```
 
-To convert the training data in json:
+To convert the training data to json:
 ```bash
 python convert_to_json.py
 ```
 
-To start training train, run:
+To start the training, run:
 ```bash
 bash start_custom_train.sh false true
 ```
