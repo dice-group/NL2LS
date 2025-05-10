@@ -1,3 +1,6 @@
 data_dir/
 *.sqsh
 venv-*/
+archive/
+slurm-*.out
+trained_model/

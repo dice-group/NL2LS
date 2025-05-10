@@ -32,4 +32,4 @@ def tsv_to_json(tsv_file_path, json_file_path):
 
 # Example usage
 if __name__ == "__main__":
-    tsv_to_json('../../../datasets_EN/limes-silver/train.txt', 'data_dir/limes-silver/train.json')
+    tsv_to_json('../../../datasets_EN/limes-silver/train.txt', 'data_dir/en/limes-silver/train.json')
