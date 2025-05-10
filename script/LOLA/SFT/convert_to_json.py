@@ -30,8 +30,8 @@ def tsv_to_json(tsv_file_path, json_file_path):
         json.dump(json_array, json_file, indent=4)
 
 
-def convert_all_datasets_de():
-    datasets_dir = '../../../datasets_EN'
+def convert_all_datasets(datasets_root, lang):
+    datasets_dir = datasets_root
     
     for root, dirs, files in os.walk(datasets_dir):
         if len(root.split(os.sep)) - len(datasets_dir.split(os.sep)) == 1:  # First level directories
@@ -42,7 +42,7 @@ def convert_all_datasets_de():
                 for file_name in tsv_files:
                     tsv_file_path = os.path.join(root, file_name)
                     relative_root = os.path.relpath(root, datasets_dir)
-                    json_file_path = os.path.join('data_dir/en', relative_root, file_name.replace('.txt', '.json'))
+                    json_file_path = os.path.join(f'data_dir/{lang}', relative_root, file_name.replace('.txt', '.json'))
                     
                     # Create the necessary directories if they don't exist
                     os.makedirs(os.path.dirname(json_file_path), exist_ok=True)
@@ -52,4 +52,5 @@ def convert_all_datasets_de():
 
 # Example usage
 if __name__ == "__main__":
-    convert_all_datasets()
+    convert_all_datasets('../../../datasets_EN', 'en')
+    convert_all_datasets('../../../datasets_DE', 'de')
