@@ -1,7 +1,6 @@
 class CustomTask:
     """
-    In this task setup the model will learn to predict the output based on a given input.
-    The model will use divider_token to separate input from output for learning.
+    In this task setup the model will learn to predict the Link Specifications based on a given natural language text.
     """
     
     default_pad_token = "[PAD]"
