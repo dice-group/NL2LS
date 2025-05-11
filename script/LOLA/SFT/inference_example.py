@@ -5,7 +5,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 
 
 model_id = "dice-research/lola_v1"
-lora_dir = "trained_model/lola_v1-en-limes-silver"
+lora_dir = "trained_model/ds-lola_v1-en-limes-silver"
 
 input_template = "Translate text into Link Specification:\n{}\n"
 
