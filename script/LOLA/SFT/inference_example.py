@@ -1,20 +1,20 @@
-# Sample usage: python -m fine_tune.misc.test_lora
-from peft import get_peft_model
-from peft.config import PeftConfig
+# Sample usage: python inference_example.py
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 
 
 model_id = "dice-research/lola_v1"
-lora_dir = "trained_model/ds-lola_v1-en-limes-silver"
+lora_dir = "./trained_model/ds-lola_v1-en-limes-silver"
 
 input_template = "Translate text into Link Specification:\n{}\n"
 
 config = AutoConfig.from_pretrained(model_id, trust_remote_code=True)
 
+# Load base model and tokenizer
 base_model = AutoModelForCausalLM.from_pretrained(
     model_id,
     config=config,
-    trust_remote_code=True
+    trust_remote_code=True,
+    load_in_4bit=True
 )
 
 tokenizer = AutoTokenizer.from_pretrained(
@@ -24,15 +24,12 @@ tokenizer = AutoTokenizer.from_pretrained(
     trust_remote_code=True
 )
 
-# Load based model and tokenizer
-# peft_config = PeftConfig.from_pretrained(lora_dir)
 base_model.resize_token_embeddings(len(tokenizer))
 
 base_model.load_adapter(lora_dir)
 model_instance = base_model.to('cuda')
 
 sample_texts = ["a link will be generated if the givenName of the source and the streetName of the target have a Cosine similarity of 45% or a Qgrams similarity of 25% or the streetNames of the source and the target have a Jarowinkler similarity of 45% and the givenName of the source and the streetName of the target have a Ratcliff similarity of 25% and the streetNames of the source and the target have a Qgrams similarity of 25%", "a link will be generated if the givenName of the source and the streetName of the target have a Jaccard similarity of 0% or a Trigrams similarity of 100% or the streetNames of the source and the target have a Mongeelkan similarity of 0% or the givenName of the source and the streetName of the target have a Soundex similarity of 100% or the streetNames of the source and the target have a Trigrams similarity of 100%"]
-
 
 sample_texts = [input_template.format(text) for text in sample_texts]
 
