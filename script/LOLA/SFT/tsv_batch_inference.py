@@ -1,6 +1,7 @@
 # Sample usage: python inference_example.py
 import pandas as pd
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
+from tqdm import tqdm
 
 model_id = "dice-research/lola_v1"
 lora_dir = "./trained_model/ds-lola_v1-en-limes-silver"
@@ -35,12 +36,12 @@ df = pd.read_csv(input_file, sep='\t', header=0)
 sample_texts = df.iloc[:, 1].tolist()  # Extract texts from the second column
 
 # Introduce batch size of 8
-batch_size = 8
+batch_size = 64
 batches = [sample_texts[i:i + batch_size] for i in range(0, len(sample_texts), batch_size)]
 
 generated_texts = []
 
-for batch in batches:
+for batch in tqdm(batches, desc='Processing batches'):
     formatted_batch = [input_template.format(text) for text in batch]
     
     model_inputs = tokenizer(
