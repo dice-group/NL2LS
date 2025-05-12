@@ -1,4 +1,5 @@
 # Sample usage: python inference_example.py
+import os
 import pandas as pd
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 from tqdm import tqdm
@@ -31,7 +32,7 @@ base_model.load_adapter(lora_dir)
 model_instance = base_model.to('cuda')
 
 # Read input from TSV file
-input_file = "../../../datasets_EN/limes-silver/dev.txt"  # Replace with your TSV file path
+input_file = "../../../datasets_EN/limes-silver/test.txt"  # Replace with your TSV file path
 df = pd.read_csv(input_file, sep='\t', header=0)
 sample_texts = df.iloc[:, 1].tolist()  # Extract texts from the second column
 
@@ -55,5 +56,17 @@ for batch in tqdm(batches, desc='Processing batches'):
     
     generated_texts.extend(tokenizer.batch_decode(output_sequences, skip_special_tokens=False))
 
-for text in generated_texts:
-    print(text)
+# Create the output directory
+output_path = "./output"
+input_path_parts = input_file.split(os.sep)[-3:]
+for part in input_path_parts:
+    output_path = os.path.join(output_path, part)
+
+os.makedirs(output_path, exist_ok=True)
+
+# Write the output to a TSV file
+with open(output_path, 'w', encoding='utf-8') as f:
+    for text in generated_texts:
+        f.write(text + '\n')
+
+print(f"Output written to {output_path}")
