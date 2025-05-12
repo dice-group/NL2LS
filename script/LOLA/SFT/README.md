@@ -23,3 +23,8 @@ To run the model in inference, use the following script:
 ```bash
 python inference_example.py
 ```
+
+To run the model in inference by passing the tsv files:
+```bash
+python tsv_batch_inference.py
+```

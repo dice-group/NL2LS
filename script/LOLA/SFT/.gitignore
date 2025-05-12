@@ -4,3 +4,4 @@ venv-*/
 archive/
 slurm-*.out
 trained_model/
+output/
