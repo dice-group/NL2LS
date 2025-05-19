@@ -1,3 +1,0 @@
-  BLEU    BLEU NLTK    METEOR    chrF++    TER    BERT-SCORE P    BERT-SCORE R    BERT-SCORE F1    BLEURT
-------  -----------  --------  --------  -----  --------------  --------------  ---------------  --------
-     0            0      0.01      0.15   1.37 
