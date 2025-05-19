@@ -1,2 +1,0 @@
-maxOverlapDistance(Country(source), State(target)) OR maxDoubleMetaSimilarity(BrotherOf(source), SiblingOf(target))
-MAX(AND(MIN(DICE(EdEducationalOrganization, institutionName)), QGRAMS(description, explanation)), OR(KOELN(about, comment), DAITCHMOKOTOFF(title, name)))

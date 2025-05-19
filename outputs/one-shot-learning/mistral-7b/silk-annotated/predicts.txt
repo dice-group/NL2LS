@@ -1,2 +1,0 @@
- max(overlapDistance(?x/p:country,?y/p:state), doublemetaSimilarity(?x/p:brotherof,?y/p:sibilingsof))
- Average(min(diceDistance(?x/p:EducationalOrganization,?y/p:insisitutionName)), min(qgramsSimilarity(x/p:description, y/p:explanation)), max(koelnSimilarity(x/p:about, y/p:comment)), max(DaitchMokotoffSimilarity(x/p:title, y/p:name)))

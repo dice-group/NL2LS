@@ -1,2 +1,0 @@
- "AND(OR(WEIGHTED_JACCARD_SIMILARITY(workfor(source), lecturingfor(target))|50, OR(TEACHING_MONGE_ELKAN_SIMILARITY(source, target.coaching)|90)), JACCARD_SIMILARITY(opposing(source), defending(target))|37)"
- "AND(NYSIIS(discussion(source), debating(target)), AND(OR(JaroWinkler(deliberation(source), consideration(target))), OR(Levenshtein(roadLabel(source), locationAdress(target))))) | 55, 75, 15"

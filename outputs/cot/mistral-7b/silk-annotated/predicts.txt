@@ -1,2 +1,0 @@
- "(Distance(country_of_source, state_of_target) OR (meta_similarity(brother_of_source, sibling_of_target) * 2) ) | maximum"
- "AND(OR(AverageSimilarity(EducationalOrganization(source), institutionName(target), DiceDistance()), QgramSimilarity(description(source), explanation(target))),OR(MaxSimilarity(koeln, about(source), comment(target)),OR(DaitchMokotoffSimilarity(title(source), name(target))))"

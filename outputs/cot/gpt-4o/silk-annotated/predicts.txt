@@ -1,2 +1,0 @@
-OR(OverlapDistance(country(source), state(target)) | maximum, DoubleMetaSimilarity(brotherof(source), sibilingsof(target)) | maximum)
-AND(AVG(MIN(diceDistance(EducationalOrganization_source, institutionName_target), qgramsSimilarity(description_source, explanation_target)), MAX(koelnSimilarity(about_source, comment_target), DaitchMokotoffSimilarity(title_source, name_target))))

@@ -1,2 +1,0 @@
-`link_specification = "country_of_source == country_of_target || brother_of_source == sibling_of_target && doublemeta_similarity >= max_overlap_distance"`
-`link = (dice_min(EO, IN) + qgrams_sim(description, explanation) + max(koeln_sim(about, comment), DaitchMokotoff_sim(title, name)))`

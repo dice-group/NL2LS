@@ -1,2 +1,0 @@
- `[max_overlap_distance(country_source, country_target) || max_doublemeta_similarity(brother_source, sibling_target)]`
- link_specification = "average(dice_distance(EducationalOrganization_source, institutionName_target), qgrams_similarity(description_source, explanation_target), max(koeln_similarity(about_source, comment_target), DaitchMokotoff_similarity(title_source, name_target))"
