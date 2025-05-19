@@ -1,0 +1,2 @@
+AND(weightedjaccard(x.of_50,x.of_50)|0.90,jaccard(x.of_3,x.of_3)|0.07)
+AND(nysiis(x.of_55,x.of_55)|0.75,levenshtein(x.of_1,x.of_1)|0.05)

@@ -1,0 +1,3 @@
+# ERROR: Konnte Zeile nicht interpretieren: Ein Link wird generiert, wenn das Lehren der Quelle und das Unterrichten des Ziels eine MongeElkan-Ähnlichkeit von 90 % und das Entgegentreten der Quelle und das Verteidigen des Ziels eine Jaccard-Ähnlichkeit von 37 % aufweisen oder das Vortragen des Ziels eine WeightedJaccard-Ähnlichkeit von 50 % hat.
+# ERROR: Konnte Zeile nicht interpretieren: Der Link wird generiert, wenn die Diskussion der Quelle und die Debatte des Ziels eine NYSIIS-Ähnlichkeit von 55 % und die Überlegung der Quelle und die Erwägung des Ziels eine JaroWinkler-Ähnlichkeit von 75
+
