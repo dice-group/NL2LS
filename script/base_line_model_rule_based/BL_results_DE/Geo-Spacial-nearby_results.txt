@@ -1,0 +1,11 @@
+OR(qgrams(x.feld,x.feld)|0.54,cosine(x.feld,x.feld)|0.41,jaroWinkler(x.feld,x.feld)|0.54,cosine(x.feld,x.feld)|0.41)
+OR(levenshtein(x.feld,x.feld)|0.44,jaroWinkler(x.feld,x.feld)|0.31,cosine(x.feld,x.feld)|0.30)
+OR(jaroWinkler(x.feld,x.feld)|0.44,cosine(x.feld,x.feld)|0.35,cosine(x.feld,x.feld)|0.34)
+OR(jaroWinkler(x.feld,x.feld)|0.60,jaroWinkler(x.feld,x.feld)|0.31,qgrams(x.feld,x.feld)|0.43)
+OR(qgrams(x.feld,x.feld)|0.54,levenshtein(x.feld,x.feld)|0.40,qgrams(x.feld,x.feld)|0.37)
+OR(qgrams(x.feld,x.feld)|0.35,qgrams(x.feld,x.feld)|0.34,levenshtein(x.feld,x.feld)|0.41)
+OR(cosine(x.feld,x.feld)|0.40,jaroWinkler(x.feld,x.feld)|0.40,levenshtein(x.feld,x.feld)|0.47)
+OR(levenshtein(x.feld,x.feld)|0.49,cosine(x.feld,x.feld)|0.49,levenshtein(x.feld,x.feld)|0.42,cosine(x.feld,x.feld)|0.49)
+OR(jaroWinkler(x.feld,x.feld)|0.45,qgrams(x.feld,x.feld)|0.43,cosine(x.feld,x.feld)|0.31,qgrams(x.feld,x.feld)|0.43)
+AND(withindays(x.feld,x.feld)|0.71,cosine(x.feld,x.feld)|0.46,und(x.feld,x.feld)|0.49)
+
