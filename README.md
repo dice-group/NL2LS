@@ -1,8 +1,3 @@
-title: "NL2LS"
-description: "Automatic Linking of Knowledge Graphs using LLMs"
-theme: jekyll-theme-cayman
-
-
 # NL2LS: LLM-based Automatic Linking of Knowledge Graphs
 
 Can large language models (LLMs) recognize link specifications (LS)?  
