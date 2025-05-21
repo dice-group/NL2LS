@@ -61,17 +61,6 @@ We evaluated all models using:
 
 ---
 
-
----
-
-## Resources
-
-📦 Code, datasets, and trained models:  
-[https://anonymous.4open.science/r/NL2LS-943C](https://anonymous.4open.science/r/NL2LS-943C)
-
-
----
-
 ## Citation
 
 ```bibtex
