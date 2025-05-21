@@ -11,7 +11,7 @@ We hypothesize that LS can be considered a low-resource language.
 In our previous work, we explored how LS can be translated into natural language (NL).  
 In this project, we tackle the reverse problem — translating NL into LS — which we call **NL2LS**.
 
-![NL2LS Architecture](https://app.diagrams.net/#G18d4ubV42lJgnNfT8wJCLt9qFPDqXCTfb#%7B%22pageId%22%3A%22QYKDqmzVO7LFD6cx5lpD%22%7D)
+![NL2LS Architecture](https://github.com/dice-group/NL2LS/blob/main/Figure.drawio.png)
 
 ---
 
@@ -74,8 +74,6 @@ We evaluated all models using:
 📦 Code, datasets, and trained models:  
 [https://anonymous.4open.science/r/NL2LS-943C](https://anonymous.4open.science/r/NL2LS-943C)
 
-📄 Preprint or Paper PDF:  
-_(Link to be added when public)_
 
 ---
 
