@@ -1,7 +1,7 @@
----
-title: NL2LS: LLM-based Automatic Linking of Knowledge Graphs
-description: Automating Link Specification Generation from Natural Language using Large Language Models
----
+title: "NL2LS"
+description: "Automatic Linking of Knowledge Graphs using LLMs"
+theme: jekyll-theme-cayman
+
 
 # NL2LS: LLM-based Automatic Linking of Knowledge Graphs
 
