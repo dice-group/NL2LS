@@ -1,9 +1,5 @@
----
-title: NL2LS: LLM-based Automatic Linking of Knowledge Graphs
-description: Automating Link Specification Generation from Natural Language using Large Language Models
----
-
 # NL2LS: LLM-based Automatic Linking of Knowledge Graphs
+### Automating Link Specification Generation from Natural Language using Large Language Models
 
 Can large language models (LLMs) recognize link specifications (LS)?  
 We hypothesize that LS can be considered a low-resource language.
