@@ -7,7 +7,9 @@ We hypothesize that LS can be considered a low-resource language.
 In our previous work, we explored how LS can be translated into natural language (NL).  
 In this project, we tackle the reverse problem — translating NL into LS — which we call **NL2LS**.
 
-![NL2LS Architecture](https://github.com/dice-group/NL2LS/blob/main/Figure.drawio.png)
+<p align="center">
+  <img src="https://github.com/dice-group/NL2LS/blob/main/Figure.drawio.png" alt="NL2LS Architecture" width="600">
+</p>
 
 ---
 
