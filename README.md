@@ -1,3 +1,8 @@
+---
+title: NL2LS: LLM-based Automatic Linking of Knowledge Graphs
+description: Automating Link Specification Generation from Natural Language using Large Language Models
+---
+
 # NL2LS: LLM-based Automatic Linking of Knowledge Graphs
 
 Can large language models (LLMs) recognize link specifications (LS)?  
@@ -6,7 +11,7 @@ We hypothesize that LS can be considered a low-resource language.
 In our previous work, we explored how LS can be translated into natural language (NL).  
 In this project, we tackle the reverse problem — translating NL into LS — which we call **NL2LS**.
 
-![NL2LS Architecture](https://github.com/dice-group/NL2LS/blob/main/Figure.drawio.png)
+![NL2LS Architecture](https://app.diagrams.net/#G18d4ubV42lJgnNfT8wJCLt9qFPDqXCTfb#%7B%22pageId%22%3A%22QYKDqmzVO7LFD6cx5lpD%22%7D)
 
 ---
 
@@ -15,9 +20,9 @@ In this project, we tackle the reverse problem — translating NL into LS — wh
 NL2LS is a novel framework that automates the generation of link specifications (LS) from English and German natural language inputs using LLMs.
 
 We address this task using:
--  **Rule-based methods** (regex-based)
--  **Zero-shot learning** via prompting
--  **Supervised fine-tuning** of LLMs
+- **Rule-based methods** (regex-based)
+- **Zero-shot learning** via prompting
+- **Supervised fine-tuning** of LLMs
 
 ---
 
@@ -28,8 +33,8 @@ We experimented with the following model families:
 - **LLaMA-3**: Decoder-only architecture  
 - **LOLA**: Decoder with Mixture-of-Experts (MoE) layers  
 
-> We also evaluated GPT and Mistral models during development.  
-> However, due to their architectural similarity to LLaMA, and to reduce redundancy, we excluded them from final experiments.
+> We also evaluated **GPT** and **Mistral** models during early development.  
+> However, due to their architectural similarity to LLaMA (i.e., decoder-only), and to avoid redundancy, we decided **not to include them** in the final experiments.
 
 ---
 
@@ -47,7 +52,7 @@ We used and extended multiple benchmark datasets:
 
 ---
 
-## 📈 Evaluation & Results
+## Evaluation & Results
 
 We evaluated all models using:
 - **BLEU**
@@ -61,14 +66,14 @@ We evaluated all models using:
 
 ---
 
-## Citation
+## Environment & Dependencies
 
-```bibtex
-@inproceedings{anonymous2025nl2ls,
-  title     = {NL2LS: LLM-based Automatic Linking of Knowledge Graphs},
-  author    = {Anonymous},
-  booktitle = {International Semantic Web Conference (ISWC)},
-  year      = {2025}
-}
+To run NL2LS locally or train/fine-tune models, set up your environment as follows:
 
+### Python Environment
 
+- Python ≥ 3.8
+- Recommended: Create a virtual environment
+  ```bash
+  python3 -m venv venv
+  source venv/bin/activate
