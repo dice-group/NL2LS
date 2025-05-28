@@ -7,7 +7,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 pipe = pipeline("text2text-generation", model=model, tokenizer=tokenizer, device=-1)
 
 # Path to the input file
-file_path = "/local/upb/users/r/reih/profiles/unix/cs/NL2LS-ISWC_2025/datasets/limes-silver/test.txt"
+file_path = "path/to/your/test.txt"
 
 # Read and process file
 with open(file_path, "r", encoding="utf-8") as f:

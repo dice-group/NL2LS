@@ -55,14 +55,3 @@ output_file = "link_specifications_output.txt"  # Output: one LS per line
 convert_file(input_file, output_file)
 print(f"✔ Link Specifications written to {output_file}")
 
-
-
-
-
-
-
-
-
-
-
-

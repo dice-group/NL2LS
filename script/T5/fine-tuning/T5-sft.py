@@ -20,8 +20,8 @@ tokenizer = AutoTokenizer.from_pretrained(base_model_name)
 model = AutoModelForSeq2SeqLM.from_pretrained(base_model_name)
 
 # Load training and validation data
-train_path = "/upb/users/r/reih/profiles/unix/cs/NL2LS-ISWC_2025/datasets_DE/limes-silver/train.txt"
-val_path = "/upb/users/r/reih/profiles/unix/cs/NL2LS-ISWC_2025/datasets_DE/limes-silver/dev.txt"
+train_path = "path/to/your/train.txt"
+val_path = "path/to/your/dev.txt"
 
 train_df = pd.read_csv(train_path, sep="\t").dropna()
 val_df = pd.read_csv(val_path, sep="\t").dropna()
@@ -106,7 +106,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_path)
 pipe = pipeline("text2text-generation", model=model, tokenizer=tokenizer, device=0)
 
 # Load test data
-test_path = "/upb/users/r/reih/profiles/unix/cs/NL2LS-ISWC_2025/datasets_DE/limes-silver/test.txt"
+test_path = "path/to/your/test.txt"
 test_df = pd.read_csv(test_path, sep="\t").dropna()
 test_df.columns = ["target", "source"]
 

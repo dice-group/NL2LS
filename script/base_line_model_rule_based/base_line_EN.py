@@ -76,36 +76,9 @@ def convert_file(input_path, output_path):
                     outfile.write(f"# ERROR: Line malformed: {line.strip()}\n")
 
 # File paths
-input_file = "/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/silver-silk-datasets/osl_test_dataset.txt"
-output_file = "/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/script/base_line_model_rule_based/results/silver-silk-datasets_results.txt"
+input_file = "path/to/your/osl_test_dataset.txt"
+output_file = "path/to/your/silver-silk-datasets_results.txt"
 
 convert_file(input_file, output_file)
 print(f"✔ Link Specifications written to {output_file}")
 
-
-
-
-
-# file paths
-# Geo-Spacial_nearby_proximity_and_temporal
-#/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/Geo-Spacial_nearby_proximity_and_temporal/Geo-Spacial-nearby.txt
-#/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/Geo-Spacial_nearby_proximity_and_temporal/Geo-spacial-proximity.txt
-#/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/Geo-Spacial_nearby_proximity_and_temporal/temporal.txt
-
-# limes-annotated
-#/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/limes-annotated/osl_test_dataset.txt
-
-# limes-manipulated
-#/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/limes-manipulated/osl_test_dataset.txt
-
-# limes-silver
-#/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/limes-silver/osl_test_dataset.txt
-
-# silk-annotated
-#/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/silk-annotated/osl_test_dataset.txt
-
-# silver-limes-manipulated
-#/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/silver-limes-manipulated/osl_test_dataset.txt
-
-# silver-silk-datasets
-#/home/reda/Desktop/Academic work/My papers/NL2LS-ISWC_2025/datasets/silver-silk-datasets/osl_test_dataset.txt
