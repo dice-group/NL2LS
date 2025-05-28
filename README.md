@@ -1,8 +1,7 @@
 # NL2LS: LLM-based Automatic Linking of Knowledge Graphs
 ### Automating Link Specification Generation from Natural Language using Large Language Models
 
-Can large language models (LLMs) recognize link specifications (LS)?  
-We hypothesize that LS can be considered a low-resource language.
+Can large language models (LLMs) recognize link specifications (LS)? We hypothesize that LS can be considered a low-resource language.
 
 In our previous work, we explored how LS can be translated into natural language (NL).  
 In this project, we tackle the reverse problem — translating NL into LS — which we call **NL2LS**.
@@ -71,6 +70,7 @@ To run NL2LS locally or train/fine-tune models, set up your environment as follo
 ### Python Environment
 
 - Python ≥ 3.8
+- torch ≥ 1.7.0
 - Recommended: Create a virtual environment
   ```bash
   python3 -m venv venv
