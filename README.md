@@ -67,10 +67,13 @@ We evaluated all models using:
 
 To run NL2LS locally or train/fine-tune models, set up your environment as follows:
 
-### Python Environment
+### Environment and Dependencies
 
+```
+- Ubuntu 10.04.2 LTS
 - Python ≥ 3.8
 - torch ≥ 1.7.0
+```
 - Recommended: Create a virtual environment
   ```bash
   python3 -m venv venv
