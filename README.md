@@ -1,10 +1,7 @@
 # NL2LS: LLM-based Automatic Linking of Knowledge Graphs
-### Automating Link Specification Generation from Natural Language using Large Language Models
 
 Can large language models (LLMs) recognize link specifications (LS)? We hypothesize that LS can be considered a low-resource language.
-
-In our previous work, we explored how LS can be translated into natural language (NL).  
-In this project, we tackle the reverse problem — translating NL into LS — which we call **NL2LS**.
+In this project, we tackle the problem of automating the generation of LS from natural language (NL) using LLMs, a task we refer to as **NL2LS**.
 
 <p align="center">
   <img src="https://github.com/dice-group/NL2LS/blob/main/Figure.drawio.png" alt="NL2LS Architecture" width="600">
@@ -75,10 +72,7 @@ We evaluated all models using:
 
 ### Instalation
 
-To run NL2LS locally or train/fine-tune models, download NL2LS repository:
-```
-git@github.com:dice-group/NL2LS.git
-```
+To run NL2LS locally or train/fine-tune models, download the NL2LS repository.
 
 Recommended: Create a virtual environment
 ```
