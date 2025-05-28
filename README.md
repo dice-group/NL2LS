@@ -63,10 +63,6 @@ We evaluated all models using:
 
 ---
 
-## Environment & Dependencies
-
-To run NL2LS locally or train/fine-tune models, set up your environment as follows:
-
 ### Environment and Dependencies
 
 ```
@@ -74,7 +70,23 @@ To run NL2LS locally or train/fine-tune models, set up your environment as follo
 - Python ≥ 3.8
 - torch ≥ 1.7.0
 ```
-- Recommended: Create a virtual environment
-  ```bash
-  python3 -m venv venv
-  source venv/bin/activate
+
+---
+
+### Instalation
+
+To run NL2LS locally or train/fine-tune models, download NL2LS repository:
+```
+git@github.com:dice-group/NL2LS.git
+```
+
+Recommended: Create a virtual environment
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install dependencies:
+```
+pip install -r requirements.txt
+```
